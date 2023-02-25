@@ -13,6 +13,15 @@ const displayPhones = phones =>{
     const divContainer = document.getElementById('div-container');
     divContainer.innerHTML='';
     phones = phones.slice(0,6);
+    // No phones found Message;
+    const noPhoneFound = document.getElementById('no-phone-found');
+    if (phones.length === 0) {
+        noPhoneFound.classList.remove('d-none');
+    } else {
+        noPhoneFound.classList.add('d-none');
+    }
+
+    // Mapping the Phone here acording to the array;
     phones.forEach(individualPhones=>{
         //console.log(individualPhones)
         
