@@ -12,7 +12,16 @@ const displayPhones = phones =>{
     // Div Container;
     const divContainer = document.getElementById('div-container');
     divContainer.innerHTML='';
-    phones = phones.slice(0,6);
+    
+    // Show all button
+    const showAllphone = document.getElementById('showall-div');
+    if(phones.length>10){
+        phones = phones.slice(0,6);
+        showAllphone.classList.remove('d-none');
+    }
+    else{
+        showAllphone.classList.add('d-none');
+    }
     // No phones found Message;
     const noPhoneFound = document.getElementById('no-phone-found');
     if (phones.length === 0) {
@@ -20,6 +29,8 @@ const displayPhones = phones =>{
     } else {
         noPhoneFound.classList.add('d-none');
     }
+
+    
 
     // Mapping the Phone here acording to the array;
     phones.forEach(individualPhones=>{
