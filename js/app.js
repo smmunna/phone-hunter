@@ -15,13 +15,15 @@ const displayPhones = phones =>{
         console.log(individualPhones)
         
         const div = document.createElement('div');
-        div.classList.add('col');
+        //div.classList.add('col');
         div.innerHTML = `
-        <div class="card">
-            <img src="${individualPhones.image}" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title">${individualPhones.phone_name}</h5>
-                    <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+       <div class='col mb-1'> 
+            <div class="card p-4">
+                <img src="${individualPhones.image}" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">${individualPhones.phone_name}</h5>
+                        <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                </div>
             </div>
         </div>
         `;
