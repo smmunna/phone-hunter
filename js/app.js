@@ -8,11 +8,12 @@ const loadPhone = async(search) =>{
 
 // Display Phones Data;
 const displayPhones = phones =>{
-    console.log(phones)
+    //console.log(phones)
     // Div Container;
     const divContainer = document.getElementById('div-container');
+    divContainer.innerHTML='';
     phones.forEach(individualPhones=>{
-        console.log(individualPhones)
+        //console.log(individualPhones)
         
         const div = document.createElement('div');
         //div.classList.add('col');
@@ -34,7 +35,7 @@ const displayPhones = phones =>{
 // Search Phone:
 document.getElementById('btn-search').addEventListener('click',function(){
     const searchValue = document.getElementById('search-phone').value;
-    console.log(searchValue)
+    loadPhone(searchValue);
 });
 // Calling phone Data Function;
 loadPhone('iphone');
