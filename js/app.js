@@ -12,6 +12,7 @@ const displayPhones = phones =>{
     // Div Container;
     const divContainer = document.getElementById('div-container');
     divContainer.innerHTML='';
+    phones = phones.slice(0,6);
     phones.forEach(individualPhones=>{
         //console.log(individualPhones)
         
