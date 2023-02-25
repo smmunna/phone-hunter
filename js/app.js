@@ -41,11 +41,27 @@ const displayPhones = phones =>{
         divContainer.appendChild(div);
 
     })
+
+    isLoadingSpinner(false);
 }
 // Search Phone:
 document.getElementById('btn-search').addEventListener('click',function(){
     const searchValue = document.getElementById('search-phone').value;
     loadPhone(searchValue);
+
+    // If data is loading to fetch;
+    isLoadingSpinner(true);
 });
+
+// Spinner Activity;
+const isLoadingSpinner  = toogleSpinner =>{
+    const spinner = document.getElementById('toggleSpinner');
+    if (toogleSpinner) {
+        spinner.classList.remove('d-none');
+    } else {
+        spinner.classList.add('d-none');
+    }
+}
+
 // Calling phone Data Function;
 loadPhone('iphone');
