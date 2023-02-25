@@ -31,5 +31,9 @@ const displayPhones = phones =>{
 
     })
 }
+// Search Phone:
+document.getElementById('btn-search').addEventListener('click',function(){
+    console.log('first')
+});
 // Calling phone Data Function;
 loadPhone();
