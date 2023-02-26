@@ -3,7 +3,7 @@ const loadPhone = async(search) =>{
     const url = `https://openapi.programming-hero.com/api/phones?search=${search}`;
     const res = await fetch(url);
     const data = await res.json();
-    displayPhones(data.data);
+    displayPhones(data.data.slice(0,6));
 }
 
 // Display Phones Data;
@@ -16,7 +16,7 @@ const displayPhones = phones =>{
     // Show all button
     const showAllphone = document.getElementById('showall-div');
     if(phones.length>10){
-        phones = phones.slice(0,6);
+        
         showAllphone.classList.remove('d-none');
     }
     else{
@@ -73,6 +73,8 @@ const isLoadingSpinner  = toogleSpinner =>{
         spinner.classList.add('d-none');
     }
 }
+
+// For showAllData;
 
 // Calling phone Data Function;
 loadPhone('iphone');
